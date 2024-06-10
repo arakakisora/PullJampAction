@@ -7,7 +7,7 @@ public class ItemScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator= GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -16,9 +16,12 @@ public class ItemScript : MonoBehaviour
         
     }
 
+   
+
     private void OnTriggerEnter(Collider other)
     {
-        DestroySelf();
+        //DestroySelf();
+        animator.SetTrigger("Get");
     }
     private void OnTriggerStay(Collider other)
     {
@@ -33,4 +36,6 @@ public class ItemScript : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private Animator animator;
 }
